@@ -41,6 +41,7 @@ if ('development' == app.get('env')) {
 
 // API URLS
 app.get('/api/reminder', apis.ReminderAll);
+app.get('/api/reminder/:id', apis.ReminderOne);
 app.post('/api/reminder', apis.CreateReminder);
 app.put('/api/reminder', apis.UpdateReminder);
 app.delete('/api/reminder', apis.DeleteReminder);

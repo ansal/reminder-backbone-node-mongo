@@ -14,6 +14,11 @@ exports.ReminderAll = function(req, res) {
   });
 };
 
+// lists a particular reminder
+exports.ReminderOne = function(req, res) {
+  res.send(req.param.id);
+}
+
 // creates a new reminder
 // title and reminder are required
 exports.CreateReminder = function(req, res) {
