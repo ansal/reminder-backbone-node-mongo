@@ -34,7 +34,7 @@
             <label class="sr-only" for="date">date</label>
             <input type="date" class="form-control" id="date" placeholder="Enter date">
           </div>
-          <button type="submit" class="btn btn-success">Create Reminder</button>
+          <button type="submit" class="btn btn-success" id="createReminderButton">Create Reminder</button>
         </div> <!-- .form-inline ends -->
         <hr>
       </div> <!-- col-md-12 ends -->
@@ -42,18 +42,20 @@
 
     <div class="row">
       <div class="col-md-6">
-        <ul>
-          <li>
-            <h4>
-              Go for it <br>
-              <small>12 4 2014</small>
-            </h4>
-          </li>
+        <ul id="reminders">
         </ul>
       </div>
     </div>
 
   </div> <!-- container ends -->
+
+  <!-- templates -->
+  <script type="text/template" id="reminderTemplate">
+    <h4>
+      <%= title %> <br>
+      <small><%= date.slice(0, 10) %></small>
+    </h4>
+  </script>
 
   <!-- js libs -->
   <script src="/js/lib/jquery.min.js"></script>
@@ -64,6 +66,8 @@
   <!-- app specific code -->
   <script src="/js/models/reminder.js"></script>
   <script src="/js/collections/reminder.js"></script>
-
+  <script src="/js/views/main-view.js"></script>
+  <script src="/js/views/reminder-view.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 </html>

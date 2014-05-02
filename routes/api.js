@@ -14,11 +14,6 @@ exports.ReminderAll = function(req, res) {
   });
 };
 
-// lists a particular reminder
-exports.ReminderOne = function(req, res) {
-  res.send(req.param.id);
-}
-
 // creates a new reminder
 // title and reminder are required
 exports.CreateReminder = function(req, res) {
@@ -40,7 +35,7 @@ exports.CreateReminder = function(req, res) {
 
 // updates a reminder
 exports.UpdateReminder = function(req, res) {
-  var id = req.body.id;
+  var id = req.parms.id;
   var title = req.body.title;
   var date = req.body.date;
   if(typeof id === 'undefined'
@@ -66,7 +61,7 @@ exports.UpdateReminder = function(req, res) {
 
 // deletes a reminder
 exports.DeleteReminder = function(req, res) {
-  var id = req.body.id;
+  var id = req.params.id;
   if(typeof id === 'undefined') {
     res.json(validationError);
     return;
