@@ -35,7 +35,7 @@ exports.CreateReminder = function(req, res) {
 
 // updates a reminder
 exports.UpdateReminder = function(req, res) {
-  var id = req.parms.id;
+  var id = req.params.id;
   var title = req.body.title;
   var date = req.body.date;
   if(typeof id === 'undefined'

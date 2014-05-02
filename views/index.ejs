@@ -34,7 +34,7 @@
             <label class="sr-only" for="date">date</label>
             <input type="date" class="form-control" id="date" placeholder="Enter date">
           </div>
-          <button type="submit" class="btn btn-success" id="createReminderButton">Create Reminder</button>
+          <button class="btn btn-success" id="createReminderButton">Create Reminder</button>
         </div> <!-- .form-inline ends -->
         <hr>
       </div> <!-- col-md-12 ends -->
@@ -54,7 +54,14 @@
     <h4>
       <%= title %> <br>
       <small><%= date.slice(0, 10) %></small>
+      <div style="display:none">
+        <input type="text" class="form-control editedTitle" placeholder="Enter title" value="<%= title %>"> <br>
+        <input type="date" class="form-control editedDate" placeholder="Enter date" value="<%= date.slice(0, 10) %>"> <br>
+        <button class="btn btn-xs btn-success updateButton">Update</button>
+      </div>
     </h4>
+
+    <button class="btn btn-xs btn-info editButton"><span class="glyphicon glyphicon-pencil"></span></button>
     <button class="btn btn-xs btn-danger deleteButton"><span class="glyphicon glyphicon-remove-sign"></span></button>
   </script>
 
