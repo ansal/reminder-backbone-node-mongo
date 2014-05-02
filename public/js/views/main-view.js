@@ -34,6 +34,8 @@ var app = app || {};
         title: title,
         date: date
       });
+      this.$title.focus().val('');
+      this.$date.val('')
     },
 
     addOne: function(reminder) {

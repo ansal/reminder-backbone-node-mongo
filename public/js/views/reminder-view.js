@@ -11,13 +11,21 @@ var app = app || {};
 
     template: _.template($('#reminderTemplate').html()),
 
-    initialize: function() {
+    events: {
+      'click .deleteButton': 'deleteReminder'
+    },
 
+    initialize: function() {
+      this.listenTo(this.model, 'destroy', this.remove);
     },
 
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
       return this;
+    },
+
+    deleteReminder: function() {
+      this.model.destroy();
     }
 
   });

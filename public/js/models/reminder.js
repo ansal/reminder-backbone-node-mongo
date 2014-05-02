@@ -10,7 +10,8 @@ var app = app || {};
     defaults: {
       title: 'Untitled Reminder',
       date: new Date()
-    }
+    },
+    idAttribute: '_id'
   });
 
 
